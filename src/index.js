@@ -70,7 +70,7 @@ async function fetchData() {
       appendToGallery(cards);
       lightbox.refresh();
     } catch (error) {
-      console.log(error.mesage);
+      console.log(error.message);
     }
     createMarkup(cards);
 
