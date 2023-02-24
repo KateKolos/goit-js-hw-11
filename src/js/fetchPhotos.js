@@ -11,6 +11,8 @@ export default class PhotoApiService {
     this.query = '';
     this.page = 1;
     this.per_page = 40;
+    this.displayAmount = this.perPage;
+    this.myTotalHits = 0;
   }
 
   async fetchPhotos() {
