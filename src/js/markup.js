@@ -1,4 +1,4 @@
-const galleryEL = document.querySelector('.gallery');
+import { refs } from './refs';
 
 export function createMarkup(photo) {
   const markup = photo
@@ -13,19 +13,25 @@ export function createMarkup(photo) {
         downloads,
       }) => {
         return `<div class="photo-card">
-  <img src="${webformatURL}" alt="${tags}" loading="lazy" width="250px" />
+   <a href="${largeImageURL}">
+    <img src="${webformatURL}" alt="${tags}" loading="lazy" width="400px" height="270px" />
+   </a>
   <div class="info">
     <p class="info-item">
-      <b>Likes: ${likes}</b>
+      <b>Likes: </b>
+      <span>${likes}</span>
     </p>
     <p class="info-item">
-      <b>Views: ${views}</b>
+      <b>Views: </b>
+      <span>${views}</span>
     </p>
     <p class="info-item">
-      <b>Comments: ${comments}</b>
+      <b>Comments: </b>
+      <span>${comments}</span>
     </p>
     <p class="info-item">
-      <b>Downloads: ${downloads}</b>
+      <b>Downloads:</b>
+      <span>${downloads}</span>
     </p>
   </div>
 </div>`;
@@ -37,9 +43,9 @@ export function createMarkup(photo) {
 }
 
 export function appendToGallery(markup) {
-  galleryEL.insertAdjacentHTML('beforeend', markup);
+  refs.galleryEl.insertAdjacentHTML('beforeend', markup);
 }
 
 export function clearGallery() {
-  galleryEL.innerHTML = '';
+  refs.galleryEl.innerHTML = '';
 }

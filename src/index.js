@@ -3,16 +3,16 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import PhotoApiService from './js/fetchPhotos';
 import { createMarkup, appendToGallery, clearGallery } from './js/markup';
 import LoadMoreBtn from './js/loadMoreBtn';
+import { refs } from './js/refs';
 
-const formEL = document.querySelector('.search-form');
 const apiService = new PhotoApiService();
 const loadMoreBtn = new LoadMoreBtn({
   selector: '.load-more',
   isHidden: true,
 });
 
-formEL.addEventListener('submit', onSubmit);
-loadMoreBtn.button.addEventListener('click', fetchData);
+refs.formEL.addEventListener('submit', onSubmit);
+refs.loadMoreBtn.addEventListener('click', fetchData);
 
 function onSubmit(e) {
   e.preventDefault();
