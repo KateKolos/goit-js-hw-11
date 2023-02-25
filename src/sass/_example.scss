@@ -41,10 +41,12 @@
 .info {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-evenly;
   column-gap: 10px;
   &-item {
+    display: flex;
+    flex-direction: column;
     color: #684f9f;
   }
 }
